@@ -14,5 +14,16 @@ int main() {
     };
     
     std::cout << "Max value in the array is: " << maxVal;
+    std::cout << "\n";
+    
+    int minVal = arr[0];
+    for (int i = 0; i < n; i++) {
+        if (arr[i] < minVal) {
+            minVal = arr[i];
+        };
+    };
+    
+    std::cout << "Min value in the array is: " << minVal;
+    std::cout << "\n";
     
 }

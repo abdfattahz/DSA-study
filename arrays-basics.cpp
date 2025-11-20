@@ -34,5 +34,29 @@ int main() {
     };
     
     std::cout << "Total sum of the elements from the array: " << sum;
+    std::cout << "\n";
+    
+    // reversing the array value
+    int left = 0;
+    int right = n - 1;
+
+    std::cout << "The normal array value is: ";
+    
+    for (int i = 0; i < n; i++) {
+        std::cout << arr[i] << " ";
+    };
+    
+    std::cout << "\n";
+    std::cout << "The reversed array value is: ";
+
+    while (left < right) {
+        std::swap(arr[left], arr[right]);
+        left++;
+        right--;
+    };
+    
+    for (int i = 0; i < n; i++) {
+        std::cout << arr[i] << " ";
+    };
     
 }

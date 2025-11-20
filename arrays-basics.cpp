@@ -26,4 +26,13 @@ int main() {
     std::cout << "Min value in the array is: " << minVal;
     std::cout << "\n";
     
+    // finding sum of total elements from the array
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        // sum = sum + arr[i];
+        sum += arr[i];
+    };
+    
+    std::cout << "Total sum of the elements from the array: " << sum;
+    
 }

@@ -65,6 +65,27 @@ int main() {
     
     for (size_t i = 0; i < n; i++) {
         std::cout << nums[i] << " ";
-    };    
+    };
+    
+    std::cout << "\n";
+    
+    // linear search
+    bool found = false;
+    int index = -1;
+    int target = 7;
+    
+    for (size_t i = 0; i < n; i++) {
+        if (nums[i] == target) {
+            found = true;
+            index = i;
+            break;
+        }
+    };
+    
+    if (found) {
+        std::cout << "The target is at index: " << index;
+    } else {
+        std::cout << "Target not found!";
+    }
 
 }

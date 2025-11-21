@@ -30,5 +30,16 @@ int main() {
     
     std::cout << "The min value is: " << minVal;
     std::cout << "\n";
+    
+    // finding the sum
+    int sum = 0;
 
+    for (size_t i = 0; i < n; i++) {
+        // sum = sum + nums[i];
+        sum += nums[i];
+    };
+    
+    std::cout << "The sum is: " << sum;
+    std::cout << "\n";
+    
 }

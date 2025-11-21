@@ -18,5 +18,17 @@ int main() {
     
     std::cout << "The max value is: " << maxVal;
     std::cout << "\n";
+    
+    // finding the min value
+    int minVal = nums[0];
+
+    for (size_t i = 0; i < n; i++) {
+        if (nums[i] < minVal) {
+            minVal = nums[i];
+        }
+    };
+    
+    std::cout << "The min value is: " << minVal;
+    std::cout << "\n";
 
 }

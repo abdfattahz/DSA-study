@@ -42,4 +42,29 @@ int main() {
     std::cout << "The sum is: " << sum;
     std::cout << "\n";
     
+    // normal vector array
+    std::cout << "The normal array is: ";
+
+    for (size_t i = 0; i < n; i++) {
+        std::cout << nums[i] << " ";
+    };
+    
+    std::cout << "\n";
+
+    // reversing the vector array
+    int left = 0;
+    int right = n - 1;
+
+    while (left < right) {
+        std::swap(nums[left], nums[right]);
+        left++;
+        right--;
+    };
+    
+    std::cout << "The reversed array is: ";
+    
+    for (size_t i = 0; i < n; i++) {
+        std::cout << nums[i] << " ";
+    };    
+
 }

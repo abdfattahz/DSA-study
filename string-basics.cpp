@@ -1,5 +1,5 @@
 #include <iostream>
-#include <unordered_map>
+#include <map>
 
 void countChar(const std::string& str);
 
@@ -13,10 +13,10 @@ void countChar(const std::string& str) {
     // this is a kay-value pair
     // for this case, key is char (which is a character)
     // while value is int (which is the count of occurences of the character)
-    std::unordered_map<char, int> freq;  // so 'freq' will be the hash map here
-                                         // where each char is a key
-                                         // and the frequency of that character
-                                         // is stored as the value (in int)
+    std::map<char, int> freq;  // so 'freq' will be the hash map here
+                               // where each char is a key
+                               // and the frequency of that character
+                               // is stored as the value (in int)
 
     // Traverse the string and count the occurences of each character
     for (char ch : str) {

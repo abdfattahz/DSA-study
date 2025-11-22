@@ -2,6 +2,7 @@
 
 int findMax(int arr[], int size);
 int findMin(int arr[], int size);
+int findSum(int arr[], int size);
 
 int main() {
     int array[] = {5, 2, 9, 1, 7};
@@ -15,6 +16,11 @@ int main() {
     int minValue = findMin(array, n);
 
     std::cout << "The min value is: " << minValue;
+    std::cout << "\n";
+
+    int total = findSum(array, n);
+
+    std::cout << "The sum is: " << total;
     std::cout << "\n";
 }
 
@@ -40,4 +46,14 @@ int findMin(int arr[], int size) {
     };
 
     return minVal;
+}
+
+int findSum(int arr[], int size) {
+    int sum = 0;
+
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+
+    return sum;
 }

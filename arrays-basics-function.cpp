@@ -1,0 +1,24 @@
+#include <iostream>
+
+int findMax(int arr[], int size);
+
+int main() {
+    int array[] = {5, 2, 9, 1, 7};
+    int n = sizeof(array) / sizeof(array[0]);
+
+    int maxValue = findMax(array, n);
+
+    std::cout << "The max value is: " << maxValue;
+}
+
+int findMax(int arr[], int size) {
+    int maxVal = arr[0];
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > maxVal) {
+            maxVal = arr[i];
+        };
+    };
+
+    return maxVal;
+}

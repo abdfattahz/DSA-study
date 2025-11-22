@@ -1,0 +1,248 @@
+1. array basics a.1. code :
+
+    int
+    findMax(int array[], int size);
+int findMin(int array[], int size);
+
+int main() {
+    int arr[] = {5, 2, 9, 1, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int maxVal = findMax(arr, n);
+
+    std::cout << "The max value is: " << maxVal;
+    std::cout << "\n";
+
+    int minVal = findMin(arr, n);
+
+    std::cout << "The min value is: " << minVal;
+}
+
+int findMax(int array[], int size) {
+    int max = array[0];
+
+    for (int i = 0; i < size; i++) {
+        if (array[i] > max) {
+            max = array[i];
+        }
+    };
+
+    return max;
+}
+
+int findMin(int array[], int size) {
+    int min = array[0];
+
+    for (int i = 0; i < size; i++) {
+        if (array[i] < min) {
+            min = array[i];
+        };
+    };
+
+    return min;
+}
+
+the time complexity will be O(n)
+
+    2. same approach
+        .since it will still go through each element one by one anyway
+
+    b.1. code : void reverseArray(int array[], int size);
+
+int main() {
+    int arr[] = {5, 2, 9, 1, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    reverseArray(arr, n);
+
+    for (int i = 0; i < n; i++) {
+        std::cout << arr[i] << " ";
+    };
+}
+
+void reverseArray(int array[], int size) {
+    int left = 0;
+    int right = size - 1;
+
+    while (left < right) {
+        std::swap(array[left], array[right]);
+        left++;
+        right--;
+    };
+}
+
+2. automatic using function vs manual entry of each element
+
+    c.1. code : int
+                findSum(int array[], int size);
+
+int main() {
+    int arr[] = {5, 2, 9, 1, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int total = findSum(arr, n);
+
+    std::cout << "The sum is: " << total;
+}
+
+int findSum(int array[], int size) {
+    int sum = 0;
+
+    for (int i = 0; i < size; i++) {
+        sum += array[i];
+    };
+
+    return sum;
+}
+
+if there
+    's negative integer inside the array, the approach will still be the same since the function loop through each element and add them one by one
+
+        2. still O(n)
+
+            2. string basics
+
+        a.1. code : void countChar(std::string& str);
+
+int main() {
+    std::string str = "hello world";
+
+    countChar(str);
+}
+
+void countChar(std::string& str) {
+    std::unordered_map<char, int> freq;
+
+    for (char ch : str) {
+        freq[ch]++;
+    };
+
+    for (auto& pair : freq) {
+        std::cout << pair.first << " : " << pair.second << std::endl;
+    };
+}
+
+so what i will do is by using unordered_map.this is because unordered_map is
+    faster than std::map,
+    eventhough it is not in order.
+
+        2. the time complexity is O(1) and
+        the worst case is O(n)
+
+            b.code:
+void isPalindrome(const std::string& str);
+
+int main() {
+    std::string str = "boob";
+    isPalindrome(str);
+}
+
+void isPalindrome(const std::string& str) {
+    int left = 0;
+    int right = str.length() - 1;
+
+    bool isPal = true;
+
+    while (left < right) {
+        if (str[left] != str[right]) {
+            isPal = false;
+            break;
+        };
+        left++;
+        right--;
+    };
+
+    if (isPal) {
+        std::cout << "true";
+    } else {
+        std::cout << "false";
+    };
+}
+
+i will use two pointer technique for this one, where i will check if the left side of the array is the same with the right side of the array or not. if it doesnt match, it will break and return false. else is true. this will loop until it meets in the middle
+idk what to answer for what data structure used here. should it be string?
+
+2. already answered above. two pointer check left side and right side of the array
+
+3. O(n)
+
+3. Hash map idea
+a. 1. code:
+void countChar(std::string& str);
+
+int main() {
+    std::string str = "hellllooooo";
+
+    countChar(str);
+}
+
+void countChar(std::string& str) {
+    std::map<char, int> freq;
+
+    for (char ch : str) {
+        freq[ch]++;
+    };
+
+    for (auto& pair : freq) {
+        std::cout << pair.first << " : " << pair.second << std::endl;
+    }
+}
+
+this time i use std::map instead of unordered_map because i have used
+    unordered_map before
+        .the difference here would be that it will sort the result
+            alphabetically now
+        .but the caveat is that the time complexity will be worse than
+            unordered_map
+        .it will be
+        O(log n)
+
+            2. i cant think of any instead of calculating how many times the
+    number appeared inside a list.maybe how many times it dissapeared
+    ?
+
+    3. eventho it is not sorted,
+    the performance is way better.time complexity O(n)
+vs O(log n)
+
+    4. Linked List we have not gone through
+    this topic yet so idk how to answer any of these questions
+
+    5. simple searching a.linear search 1. code
+    : void findTarget(int array[], int size, int target);
+
+int main() {
+    int arr[] = {5, 2, 9, 1, 7};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    int tar = 5;
+    findTarget(arr, n, tar);
+}
+
+void findTarget(int array[], int size, int target) {
+    bool found = false;
+    int index = -1;
+
+    for (int i = 0; i < size; i++) {
+        if (array[i] == target) {
+            found = true;
+            index = i;
+            break;
+        };
+    }
+
+    if (found) {
+        std::cout << "The target is at index: " << index;
+    } else {
+        std::cout << "Target not found!";
+    }
+}
+
+b. we have not gone through binary search yet so i have no idea how to answer any of these questions
+
+6. time complexity
+1. big O notation tells how efficient the algo is. 
+2.  - O(n)
+    - O(1)
+    - O(1) worst case O(n) for unordered_map
+    - O(log n) for std::map

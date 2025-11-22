@@ -3,7 +3,8 @@
 int findMax(int arr[], int size);
 int findMin(int arr[], int size);
 int findSum(int arr[], int size);
-int reverseArray(int arr[], int size);
+void reverseArray(int arr[], int size);
+int linearSearch(int arr[], int size, int target);
 
 int main() {
     int array[] = {5, 2, 9, 1, 7};
@@ -41,6 +42,8 @@ int main() {
     };
 
     std::cout << "\n";
+
+    linearSearch(array, n, 7);
 }
 
 int findMax(int arr[], int size) {
@@ -77,7 +80,7 @@ int findSum(int arr[], int size) {
     return sum;
 }
 
-int reverseArray(int arr[], int size) {
+void reverseArray(int arr[], int size) {
     int left = 0;
     int right = size - 1;
 
@@ -86,6 +89,25 @@ int reverseArray(int arr[], int size) {
         left++;
         right--;
     };
+}
 
-    return 0;
+int linearSearch(int arr[], int size, int target) {
+    bool found = false;
+    int index = -1;
+
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == target) {
+            found = true;
+            index = i;
+            break;
+        };
+    };
+
+    if (found) {
+        std::cout << "The target is at: " << index;
+    } else {
+        std::cout << "Target is not found";
+    };
+
+    return index;
 }

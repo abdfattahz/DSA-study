@@ -3,6 +3,7 @@
 int findMax(int arr[], int size);
 int findMin(int arr[], int size);
 int findSum(int arr[], int size);
+int reverseArray(int arr[], int size);
 
 int main() {
     int array[] = {5, 2, 9, 1, 7};
@@ -21,6 +22,24 @@ int main() {
     int total = findSum(array, n);
 
     std::cout << "The sum is: " << total;
+    std::cout << "\n";
+
+    // normal array
+    std::cout << "The normal array is: ";
+
+    for (int i = 0; i < n; i++) {
+        std::cout << array[i] << " ";
+    };
+
+    std::cout << "\n";
+    std::cout << "The reversed array is: ";
+
+    reverseArray(array, n);
+
+    for (int i = 0; i < n; i++) {
+        std::cout << array[i] << " ";
+    };
+
     std::cout << "\n";
 }
 
@@ -56,4 +75,17 @@ int findSum(int arr[], int size) {
     }
 
     return sum;
+}
+
+int reverseArray(int arr[], int size) {
+    int left = 0;
+    int right = size - 1;
+
+    while (left < right) {
+        std::swap(arr[left], arr[right]);
+        left++;
+        right--;
+    };
+
+    return 0;
 }
